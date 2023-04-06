@@ -5,23 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="/CSS/style.css">
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
-    <div>
-        <p>Make your choice:</p>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+    <p>Make your choice:</p>
+    <div id="img-container">
+      <input type="image" id="rock" src="/rock-picture.jpg" onclick="copyImage('rock')">
+      <input type="image" id="paper" src="/paper-picture.jpg" onclick="copyImage('paper')">
+      <input type="image" id="scissors" src="/scissors-picture.jpg" onclick="copyImage('scissors')">
     </div>
     <br>
-    <div id="choice"></div>
-    <br>
-    <div id="result"></div>
-    <br>
-    <div id="score"></div>
-    <br>
-    <button id="newGameBtn" style="display:none">New Game</button>
+    <div id="result-container">
+        <div id="fight"></div>
+            <div id="fight-container">
+                <div>
+                    <p>You</p>
+                    <img src="/question-mark-picture.jpg" id="playerWeapon">
+                </div>
+                <p>VS</p>
+                <div>
+                    <p>Computer</p>
+                    <img src="/question-mark-picture.jpg" id="computerWeapon">
+                </div>
+            </div>
+                
+        <div id="choice"></div>
+        <br>
+        <div id="result"></div>
+        <br>
+        <div id="score"></div>
+        <br>
+        <button id="newGameBtn" style="display:none">New Game</button>
+    </div>
+    
     <script src="/JS/script.js"></script>
 </body>
 </html>

@@ -1,9 +1,8 @@
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('input');
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
 const newGameBtn = document.querySelector('#newGameBtn');
-const choiceDiv = document.querySelector('#choice');
 const resultDiv = document.querySelector('#result');
 const scoreDiv = document.querySelector('#score');
 
@@ -48,8 +47,16 @@ function playRound(playerSelection) {
   } else {
     result = "Invalid input. Please select Rock, Paper, or Scissors.";
   }
+  
+  let computerWeapon = document.getElementById('computerWeapon')
+  if (computerSelection == 'rock') {
+    computerWeapon.src = "./rock-picture.jpg";
+  } else if (computerSelection == 'paper') {
+    computerWeapon.src = "/paper-picture.jpg";
+  } else if (computerSelection == 'scissors') {
+    computerWeapon.src = "/scissors-picture.jpg";
+  }
 
-  choiceDiv.textContent = `The computer has chosen ${computerSelection}`;
   resultDiv.textContent = result;
   scoreDiv.textContent = `Player score: ${playerScore} Computer score: ${computerScore}`;
 
@@ -67,21 +74,30 @@ function playRound(playerSelection) {
   }
 }
 
+function copyImage(imageId) {
+  let playerWeapon = document.querySelector('#playerWeapon');
+  let clickedImage = document.getElementById(imageId);
+  playerWeapon.src = clickedImage.src;
+}
+
 function newGame() {
   playerScore = 0;
   computerScore = 0;
-  choiceDiv.textContent = '';
   resultDiv.textContent = '';
   scoreDiv.textContent = ``;
   newGameBtn.style.display = 'none';
   rockBtn.disabled = false;
   paperBtn.disabled = false;
   scissorsBtn.disabled = false;
+  let playerWeapon = document.querySelector('#playerWeapon');
+  playerWeapon.src = "./question-mark-picture.jpg";
+  computerWeapon.src = "./question-mark-picture.jpg";
 }
 
-buttons.forEach((button) => {
-  button.addEventListener('click', () => {
-    playRound(button.id);
+buttons.forEach((input) => {
+  input.addEventListener('click', () => {
+    playRound(input.id);
+    buttons.classList.add('clicked');
   });
 });
 

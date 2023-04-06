@@ -1,0 +1,71 @@
+html {
+    background: url('/background.jpg');
+    font-family: 'Chalkduster', Courier, monospace;
+    color: white;
+    font-size: 24px;
+}
+
+body,html {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+  }
+
+  input {
+    height: 150px;
+    width: 150px;
+    border: .3rem solid black;
+    border-radius: .5rem;
+    box-shadow: 0 0 2rem black;
+  }
+
+p {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+}
+
+#img-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+#result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#fight-container {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+
+#playerWeapon,
+#computerWeapon {
+    height: 150px;
+    width: 150px;
+    border: .3rem solid black;
+    border-radius: .5rem;
+    margin: 0px 50px 0px 50px;
+    box-shadow: 0 0 2rem black;
+
+}
+
+#newGameBtn {
+    font-family: 'Chalkduster', Courier, monospace;
+    font-size: larger;
+    border-radius: .5em;
+    border: 0.3rem solid black;
+    padding: 10px;
+    box-shadow: 0 0 2rem black;
+    cursor: pointer;
+}
