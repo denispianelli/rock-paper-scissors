@@ -52,9 +52,9 @@ function playRound(playerSelection) {
   if (computerSelection == 'rock') {
     computerWeapon.src = "./rock-picture.jpg";
   } else if (computerSelection == 'paper') {
-    computerWeapon.src = "/paper-picture.jpg";
+    computerWeapon.src = "./paper-picture.jpg";
   } else if (computerSelection == 'scissors') {
-    computerWeapon.src = "/scissors-picture.jpg";
+    computerWeapon.src = "./scissors-picture.jpg";
   }
 
   resultDiv.textContent = result;
